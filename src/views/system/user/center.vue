@@ -213,11 +213,12 @@
                   <el-input v-model="modelForm.url" style="width: 55%"></el-input>
                   <span style="color: #C0C0C0;margin-left: 10px;">论文地址即URL</span>
                 </el-form-item>
-                <el-form-item label="MIOU" prop="miou">
+                <el-form-item label="MIOU/AP" prop="miou">
                   <el-input v-model="modelForm.miou" type="number" style="width: 55%"></el-input>
                 </el-form-item>
                 <el-form-item label="F1" prop="f1">
                   <el-input v-model="modelForm.f1" type="number" style="width: 55%"></el-input>
+                  <span style="color: #C0C0C0;margin-left: 10px;">若没有数据则输入0</span>
                 </el-form-item>
                 <el-form-item label="模型文件">
                   <el-upload
@@ -237,10 +238,10 @@
                     :data="uploadParams"
                   >
                     <i class="el-icon-upload"></i>
-                    <div class="el-upload__text">将文件拖到此处，或<em>点击选择</em></div>
-                    <div class="el-upload__tip" slot="tip">支持多选与拖拽选择文件，<span
+                    <div class="el-upload__text">将文件拖到此处，或<em>点击选择</em><div>最大文件限制300M</div></div>
+                    <div class="el-upload__tip" slot="tip">至少上传模型和模型的python文件，<span
                       style="color: red"
-                    >请选择完毕所有的文件并选择模型类型后</span>再点击上传文件按钮
+                    >模型名应为model(如model.pth)，模型的Python文件名与模型名称一致，且文件中应该有get_model()函数返回模型</span>
                     </div>
                   </el-upload>
                   <el-button size="small" type="success" @click="submitUpload">立即创建</el-button>
@@ -402,7 +403,11 @@ export default {
     handleRemove() {
     },
     uploadBefore(file) {
-      console.log(file)
+      if (file.size / 1024 / 1024 > 300) {
+        this.$message.error('超出文件大小限制:' + file.size)
+        return false
+      }
+      return true
     },
     uploadError(err, file, fileList) {
       this.$message.error('模型文件上传失败')

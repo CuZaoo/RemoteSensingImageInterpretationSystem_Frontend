@@ -105,15 +105,15 @@
         </el-col>
       </el-row>
     </el-main>
-    <div class="toLeft is_fixed" :style="activeStyleLeft" @mouseover="mouseOver(true)"
-         @mouseleave="mouseLeave"
-    >
-      <el-tooltip effect="dark" content="切换模式" placement="left">
-        <el-button :circle="true" style="background-color: #c0c4cc;" @click="handleSheetChange">
-          <el-avatar :size="50" style="border: #fde1ff 1px solid;" icon="el-icon-d-arrow-left"></el-avatar>
-        </el-button>
-      </el-tooltip>
-    </div>
+<!--    <div class="toLeft is_fixed" :style="activeStyleLeft" @mouseover="mouseOver(true)"-->
+<!--         @mouseleave="mouseLeave"-->
+<!--    >-->
+<!--      <el-tooltip effect="dark" content="切换模式" placement="left">-->
+<!--        <el-button :circle="true" style="background-color: #c0c4cc;" @click="handleSheetChange">-->
+<!--          <el-avatar :size="50" style="border: #fde1ff 1px solid;" icon="el-icon-d-arrow-left"></el-avatar>-->
+<!--        </el-button>-->
+<!--      </el-tooltip>-->
+<!--    </div>-->
 
     <el-dialog
       title="结果(点击图片查看大图)"
