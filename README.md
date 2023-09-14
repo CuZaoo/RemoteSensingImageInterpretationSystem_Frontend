@@ -1,20 +1,8 @@
 
-# 遥感图像自动解译系统 前端
+# 遥感图像自动解译网站 前端
 ## 使用的前端模板
 ELADMIN 前端：https://github.com/elunez/eladmin-web
 
-#### 项目源码
-
-|     |   后端源码  |   前端源码  |
-|---  |--- | --- |
-|  github   |  https://github.com/CuZaoo/SoftBei_YG_backend   |  https://github.com/CuZaoo/SoftBei_YG_frontend   |
-
-
-#### 前端模板
-
-初始模板基于： [https://github.com/PanJiaChen/vue-element-admin](https://github.com/PanJiaChen/vue-element-admin)
-
-模板文档： [https://panjiachen.github.io/vue-element-admin-site/zh/guide/](https://panjiachen.github.io/vue-element-admin-site/zh/guide/)
 
 #### Build Setup
 ``` bash
